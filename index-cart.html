@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="Florencia Cortes">
+
+	<title>E-commerce Floppy</title>
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
+				viewBox='0 0 100 100'><text y='.9em' font-size='80'> &#128578;</text></svg>" />
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="assets/js/index-cart.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/index-cart.css">
+
+	<style>
+		.no-visible {
+			visibility: hidden !important;
+			display: none !important;
+		}
+
+		a,
+		a:link,
+		a:visited {
+			text-decoration: none;
+		}
+
+		.price-font {
+			font-size: 1.25rem;
+			font-weight: 900;
+		}
+
+		.container-f {
+			display: flex;
+			justify-content: left;
+		}
+
+		@media (max-width: 576px) {
+			.custom-img {
+				height: 260px;
+				width: auto;
+			}
+		}
+
+		.outline-custom:hover {
+			background-color: white;
+			color: black;
+		}
+
+		.white-background {
+			background-color: white;
+		}
+	</style>
+
+
+</head>
+<body class="d-flex flex-column h-100 bg-light">
+
+	<div class="container mt-4">
+
+		<nav class="navbar navbar-expand-lg  bg-light" aria-label="Offcanvas navbar large">
+			<i class="fa-regular fa-burger-soda"></i>
+			<div class="container-fluid">
+				
+				<a class="navbar-brand ms-1" href="/index.html">
+					<h3> <i class="fa-solid fa-store"></i>&nbsp;&nbsp;E-commerce Floppy </h3>
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+					<div class="offcanvas-header">
+						<h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menu Bar</h5>
+						<button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+					</div>
+					<div class="offcanvas-body">
+						<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+							<li class="nav-item">
+								<a class="nav-link active" href="/index-cart.html">
+									<h5> <i class="fa-solid fa-cart-shopping"></i>&nbsp;&nbsp; <span id="items-cart">0</span> &nbsp;Items</h5>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container px-4 py-5" id="hanging-icons">
+			<h5 class="pb-2 border-bottom">Total: <span id="id-total-cart">$</span> &nbsp;&nbsp; Items:<span id="id-total-cart-items"></span> </h5>
+			
+			<div id="body-cart" class="w-50 row g-4 pt-2 pb-5 row-cols-1 row-cols-lg-1"> </div>
+
+			<div class="buttons d-flex flex-row mt-0 gap-3 mb-4">
+				<button id="btn-process-buy" style="width:140px;" class='btn btn-outline-dark outline-custom text-uppercase '> <b>Comprar</b> </button>
+				<button id="btn-delete-basket" style="width:140px;" class='btn btn-outline-dark outline-custom text-uppercase '> <b>Eliminar</b> </button>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
